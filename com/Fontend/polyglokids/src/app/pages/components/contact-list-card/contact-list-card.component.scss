@@ -1,0 +1,58 @@
+.list-group {
+  max-height: 270px;
+  padding: 1em;
+  max-width: 90%;
+  overflow-y: auto;
+}
+
+.list-group-users {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+.container-contact-user {
+  display: flex;
+  align-items: center;
+}
+li {
+  all: unset;
+  border-top: 1px solid red;
+  border-bottom: 2px solid blue;
+  border-image: linear-gradient(
+    to right,
+    rgba(169, 169, 169, 0),
+    #888,
+    rgba(169, 169, 169, 0)
+  );
+  border-image-slice: 1;
+  border-image: linear-gradient(
+    to right,
+    rgba(169, 169, 169, 0),
+    #888,
+    rgba(169, 169, 169, 0)
+  );
+  border-image-slice: 2;
+}
+
+.contact-user-icon {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.contact-options-icon {
+  display: flex;
+  div {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,166 @@
+.login-section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 58%);
+  height: 100%;
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+.login-section .form-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-section .form-box.register {
+  transform: translateX(430px);
+  transition: transform 0.6s ease;
+  transition-delay: 0s;
+}
+
+.login-section.active .form-box.register {
+  transform: translateX(0px);
+  transition-delay: 0.7s;
+}
+
+.login-section .form-box.login {
+  transform: translateX(0px);
+  transition: transform 0.6s ease;
+  transition-delay: 0.7s;
+}
+
+.login-section.active .form-box.login {
+  transform: translateX(430px);
+  transition-delay: 0s;
+}
+
+.login-section .form-box h2 {
+  text-align: center;
+  font-size: 25px;
+}
+
+.form-box .input-box {
+  width: 340px;
+  height: 50px;
+  border-bottom: 2px solid #fff;
+  margin: 30px 0;
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding-right: 28px;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 600px;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+
+.input-box .icon {
+  position: absolute;
+  top: 13px;
+  right: 0;
+  font-size: 19px;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -5px;
+}
+
+.remember-password {
+  font-size: 14px;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-password label input {
+  accent-color: #fff;
+  margin-right: 3px;
+}
+
+.remember-password a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-password a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  background: #fff;
+  width: 100%;
+  height: 45px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #1a1a1a; /* Cambiado a un azul oscuro */
+  font-size: 16px;
+  color: #fff;
+  style: antiquewhite;
+}
+
+.create-account {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 25px;
+}
+
+.create-account p a {
+  color: #fff;
+  font-weight: 600px;
+  text-decoration: none;
+}
+
+.create-account p a:hover {
+  text-decoration: underline;
+}
+
+.bxs-lock-alt {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 12c0-1.103-.897-2-2-2h-1V7c0-2.757-2.243-5-5-5S7 4.243 7 7v3H6c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-8zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9V7z' fill='%23000'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.bx--bxs-envelope {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.7l-8 5.334L4 8.7V6.297l8 5.333l8-5.333V8.7z' fill='%23000'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}

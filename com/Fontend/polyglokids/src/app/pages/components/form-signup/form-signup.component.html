@@ -1,0 +1,151 @@
+<div class="login-section">
+  <h2>Regístrate</h2>
+  <form [formGroup]="signUpForm" class="form-box" (submit)="enviar()">
+    <div class="input-box-container">
+      <label class="form-label" id="correo">Correo</label>
+      <input
+        [ngClass]="{
+          'is-invalid':
+            hasErrors('correo', 'required') || hasErrors('correo', 'email')
+        }"
+        type="email"
+        class="form-control"
+        name="correo"
+        formControlName="correo"
+      />
+      <div class="text-validation" *ngIf="hasErrors('correo', 'required')">
+        Correo requerido
+      </div>
+
+      <div class="text-validation" *ngIf="hasErrors('correo', 'email')">
+        Formato de correo Invalido
+      </div>
+    </div>
+
+    <div class="input-box-container">
+      <label class="form-label" id="name">Nombre</label>
+      <input
+        [ngClass]="{
+          'is-invalid': hasErrors('nombre', 'required')
+        }"
+        type="text"
+        class="form-control"
+        name="name"
+        formControlName="nombre"
+      />
+      <div class="text-validation" *ngIf="hasErrors('nombre', 'required')">
+        Nombre requerido
+      </div>
+    </div>
+
+    <div class="input-box-container">
+      <label class="form-label" id="apellido">apellido</label>
+      <input
+        [ngClass]="{ 'is-invalid': hasErrors('apellido', 'required') }"
+        type="text"
+        class="form-control"
+        name="last-name"
+        formControlName="apellido"
+      />
+      <div class="text-validation" *ngIf="hasErrors('apellido', 'required')">
+        apellido requerido
+      </div>
+    </div>
+
+    <div class="input-box-container">
+      <label class="form-label" id="contraseña">Contraseña</label>
+      <input
+        [ngClass]="{
+          'is-invalid':
+            hasErrors('contraseña', 'required') ||
+            hasErrors('contraseña', 'passwordMismatch')
+        }"
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="contraseña"
+      />
+      <div class="text-validation" *ngIf="hasErrors('contraseña', 'required')">
+        Contraseña requerido
+      </div>
+
+      <div
+        class="text-validation, text-validation-password"
+        *ngIf="hasErrors('contraseña', 'pattern')"
+      >
+        <span
+          class="block text-primary"
+          *ngIf="passwordFormField()?.errors?.['uppercase']"
+        >
+          Minimo 1 letra Mayuscula.
+        </span>
+        <span
+          class="block text-primary"
+          *ngIf="passwordFormField()?.errors?.['lowercase']"
+        >
+          Minimo 1 letra Minuscula.
+        </span>
+        <span
+          class="block text-primary"
+          *ngIf="passwordFormField()?.errors?.['digit']"
+        >
+          Minimo 1 numero.
+        </span>
+        <span
+          class="block text-primary"
+          *ngIf="passwordFormField()?.errors?.['special']"
+        >
+          Minimo 1 Caracter special.
+        </span>
+        <span
+          class="block text-primary"
+          *ngIf="passwordFormField()?.errors?.['length']"
+        >
+          Minimoo 8 Caracteres
+        </span>
+      </div>
+    </div>
+
+    <div class="input-box-container">
+      <label class="form-label" id="confirm Password"
+        >Confirmar contraseña</label
+      >
+      <input
+        [ngClass]="{
+          'is-invalid':
+            hasErrors('confirmacioncontraseña', 'required') ||
+            hasErrors('confirmacioncontraseña', 'passwordMismatch') ||
+            hasErrors('contraseña', 'passwordsmatch')
+        }"
+        type="password"
+        class="form-control"
+        id="passwordMatch"
+        formControlName="confirmacioncontraseña"
+      />
+      <div
+        class="text-validation"
+        *ngIf="hasErrors('confirmacioncontraseña', 'required')"
+      >
+        Contraseña requerida
+      </div>
+
+      <div
+        class="text-validation"
+        *ngIf="
+          hasErrors('confirmacioncontraseña', 'passwordMismatch') &&
+          hasErrors('contraseña', 'passwordMismatch')
+        "
+      >
+        Las contraseñas no coinciden
+      </div>
+    </div>
+    <button type="submit" class="btn">enviar</button>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </form>
+
+  <p class="redirecition-text">
+    ¿Ya tienes cuenta?<a routerLink="/login">iniciar Sesion</a>
+  </p>
+</div>

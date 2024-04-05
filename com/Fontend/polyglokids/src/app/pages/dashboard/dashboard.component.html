@@ -1,0 +1,9 @@
+<body [ngClass]="sizeWithNavCollapse">
+  <div class="container-sidevar">
+    <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+  </div>
+
+  <div class="box">
+    <router-outlet></router-outlet>
+  </div>
+</body>

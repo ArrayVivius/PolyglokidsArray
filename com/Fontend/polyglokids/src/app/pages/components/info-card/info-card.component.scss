@@ -1,0 +1,40 @@
+.info-card-container {
+  h2 {
+    padding: 1em 0 0 1em;
+    box-sizing: block;
+    margin: 0;
+  }
+  .info-class-calendary-container {
+    padding: 2em;
+    display: flex;
+    gap: 2em;
+    .info-meet-calendary-container {
+      border: 1px solid black;
+      border-radius: 14px;
+      width: 60%;
+      padding: 1em;
+      .info-meet-calendary {
+        display: flex;
+        gap: 1em;
+      }
+    }
+  }
+}
+.note-meet-calendary {
+  border: 1px solid black;
+  border-radius: 14px;
+  padding: 1em;
+  width: 40%;
+}
+
+.card-info-external-resources {
+  color: #91a1eb;
+  background-color: rgb(241, 245, 254);
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.2em;
+  font-style: none;
+  padding: 1em;
+
+  border-radius: 14px;
+}

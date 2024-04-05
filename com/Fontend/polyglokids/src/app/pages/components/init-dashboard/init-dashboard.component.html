@@ -1,0 +1,42 @@
+<main class="layout-content">
+  <section class="cards-top-container">
+    <div
+      class="cards-top"
+      *ngFor="let data of cardTopData; let i = index"
+      [class]="'custom-card-' + i"
+    >
+      <div class="cards-top-info-rigth">
+        <i class="cards-icon" [class]="data.icon"> </i>
+      </div>
+      <div class="cards-top-info-left">
+        <h3>{{ data.h3 }}</h3>
+        <span>{{ data.value }}</span>
+      </div>
+    </div>
+
+    <!--   <div class="number__courses__progress cards-top cards"> -->
+    <!--     <div class="cards-top-info-rigth"> -->
+    <!--       <i class="fa fa-rocket fa-3x"></i> -->
+    <!--     </div> -->
+    <!---->
+    <!--     <div class="cards-top-info-left"> -->
+    <!--       <h3>Curso actuales</h3> -->
+    <!--       <span>4</span> -->
+    <!--     </div> -->
+    <!--   </div> -->
+    <!---->
+  </section>
+
+  <div class="calendary cards">
+    <full-calendar *ngIf="calendarVisible()" [options]="calendarOptions()">
+      <ng-template #eventContent let-arg>
+        <b>{{ arg.timeText }}</b>
+        <i>{{ arg.event.title }}</i>
+      </ng-template>
+    </full-calendar>
+  </div>
+
+  <app-contact-list-card class="card-7 cards"></app-contact-list-card>
+
+  <app-info-card class="card-8 cards"></app-info-card>
+</main>

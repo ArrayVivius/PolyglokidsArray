@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:8.0.33
+    environment:
+      MYSQL_USER: vandel
+      MYSQL_PASSWORD: 123456
+      MYSQL_DATABASE: polyglokids_db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3307:3306
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - springboot-mysql-net
+
+  springboot-restful-webservices:
+    container_name: springboot-restful-webservices
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysqldb
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/polyglokids_db?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8
+      - SPRING_DATASOURCE_USERNAME=vandel
+      - SPRING_DATASOURCE_PASSWORD=123456
+      - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.cj.jdbc.Driver
+      - SPRING_DATASOURCE_HIBERNATE_CONNECTION_CHARACTER_ENCODING=UTF-8
+      - SPRING_JPA_HIBERNATE_DDL-AUTO=update
+      - SPRING_JPA_SHOW-SQL=true
+    networks:
+      - springboot-mysql-net
+    restart: on-failure
+
+  angular-service: # The name of the service
+    container_name: angularcontainer # Container name
+    build: ./Fontend/polyglokids/ # Location of our Dockerfile
+    volumes: # Volume binding
+      - "./Fontend/polyglokids/:/usr/src/app"
+    ports:
+      - "4200:4200" # Port mapping
+
+networks:
+  springboot-mysql-net:
+
+volumes:
+  db:

@@ -1,0 +1,29 @@
+.layout-content {
+  height: 90vh;
+  padding: 3em;
+}
+
+.cards-container {
+  max-width: 80%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  background-color: red;
+}
+
+.couser-title-container {
+  background-color: red;
+  width: 100%;
+  height: 400px;
+  background-color: blue;
+}
+
+.filter-couse {
+  grid-area: 4 / 2 / 13 / 5;
+  background-color: red;
+}
+
+.course-card {
+  background-color: red;
+  grid-area: 4 / 5 / 8 / 10;
+}

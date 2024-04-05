@@ -1,0 +1,25 @@
+body {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100vh;
+  grid-column-gap: 3em;
+  background-color: rgb(237, 240, 245);
+}
+
+.dashboard-container {
+  grid-template-columns: 5rem 1fr;
+  transition: all 0.5s ease;
+  &.collapsed {
+    grid-template-columns: 16.5625rem 1fr;
+  }
+}
+
+.container-sidevar {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+}
+.box {
+  grid-area: 1 / 2 / 2 / 3;
+}
