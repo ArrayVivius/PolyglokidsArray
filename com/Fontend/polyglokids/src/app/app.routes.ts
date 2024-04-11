@@ -7,6 +7,7 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { InitDashboardComponent } from './pages/components/init-dashboard/init-dashboard.component';
 import { LoginSectionComponent } from './pages/components/login-section/login-section.component';
 import { FormSignupComponent } from './pages/components/form-signup/form-signup.component';
+import { InfoCourseComponent } from './pages/info-course/info-course.component';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,12 @@ export const routes: Routes = [
       {
         path: 'course',
         component: CoursesComponent,
+        canActivate: [authGuard],
+      },
+
+      {
+        path: 'course/:id',
+        component: InfoCourseComponent,
         canActivate: [authGuard],
       },
     ],

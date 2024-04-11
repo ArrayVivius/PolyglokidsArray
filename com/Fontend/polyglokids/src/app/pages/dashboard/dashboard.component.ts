@@ -29,10 +29,10 @@ export class DashboardComponent {
   sizeWithNavCollapse: string = 'dashboard-container';
 
   constructor() {
-    this.authService.getCurrentAuthUser().subscribe((r) => {
-      console.log(r);
-      this.user = r;
-    });
+    // this.authService.getCurrentAuthUser().subscribe((r) => {
+    //   console.log(r);
+    //   this.user = r;
+    // });
     this.navCollapser = false;
   }
 

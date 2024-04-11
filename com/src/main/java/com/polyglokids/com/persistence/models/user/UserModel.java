@@ -54,8 +54,8 @@ public class UserModel implements UserDetails {
   @Column(name = "fecha_de_creacion")
   LocalDate fecha_de_creacion;
 
-  @OneToMany(mappedBy = "usuario")
-  Set<UserCourseModel> cursos = new HashSet<>();
+  // @OneToMany(mappedBy = "usuario")
+  // Set<UserCourseModel> cursos = new HashSet<>();
 
   @ElementCollection(targetClass = ERoleType.class)
   @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "id_user"))

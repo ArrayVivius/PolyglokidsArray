@@ -9,6 +9,8 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { LoginSectionComponent } from './pages/components/login-section/login-section.component';
 import { Component } from '@angular/core';
 import { FormSignupComponent } from './pages/components/form-signup/form-signup.component';
+import { SearchBarComponent } from 'pages/components/search-bar/search-bar.component';
+import { InfoCourseComponent } from './pages/info-course/info-course.component';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +26,8 @@ import { FormSignupComponent } from './pages/components/form-signup/form-signup.
     CoursesComponent,
     LoginSectionComponent,
     FormSignupComponent,
+    SearchBarComponent,
+    InfoCourseComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

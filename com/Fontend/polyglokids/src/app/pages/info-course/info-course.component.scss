@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+.layout-content {
+  height: 90vh;
+  padding: 3em;
+}
+
+.course-header {
+  width: 90%;
+  height: 230px;
+  display: flex;
+  border: solid 1px;
+  align-items: center;
+  margin: 0 auto;
+
+  .course-header__img {
+    max-width: 350px;
+    height: 90%;
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 30px;
+  }
+
+  .course-header__mid {
+    width: 60%;
+    margin-right: 5%;
+
+    h2 {
+      font-size: 3em;
+    }
+
+    .course-header__mid-description {
+      max-width: 85%;
+    }
+  }
+
+  .course-header__rigth {
+    height: 100%;
+    width: 300px;
+    align-content: space-evenly;
+
+    .course-header__rigth-tag {
+      background-color: blue;
+      border-radius: 22px;
+      padding: 0 1em;
+      width: 80px;
+      margin: 0 0 40px 70px;
+    }
+
+    .course-header__rigth__profeson {
+      display: flex;
+      align-items: center;
+      font-size: 1em;
+      text-align: right;
+
+      img {
+        width: 60px;
+        height: auto;
+        border-radius: 50%;
+        margin-right: 2em;
+      }
+    }
+  }
+}
+
+.course-details {
+  margin: 0 auto;
+  display: flex;
+  margin-top: 2.5rem;
+  width: 80%;
+  height: 600px;
+
+  .tabs {
+    width: 100%;
+  }
+  .ul-details {
+    width: 50%;
+    gap: 10px;
+    li {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+o .detail-container {
+  display: flex;
+  border: 1px solid;
+  h3 {
+    font-size: 2em;
+  }
+}
+.detail-left {
+  width: 60%;
+}
+
+.contact-user-icon {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.contact-options-icon {
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    width: 30px;
+  }
+}
+
+.table-container {
+  width: 70%;
+  background-color: yellow;
+  padding: 3px;
+}
+.table-Options-title {
+  padding-left: 3rem;
+}
+
+.teacher-card {
+  width: 50%;
+  background-color: blue;
+}
+
+.container_alumnos {
+  display: flex;
+}
+
+.alumnons-container {
+  display: flex;
+  width: 100%;
+}

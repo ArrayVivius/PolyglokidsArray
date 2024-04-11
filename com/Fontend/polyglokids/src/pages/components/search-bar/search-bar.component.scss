@@ -1,0 +1,12 @@
+.search-bar-container {
+  background: #fff;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  width: 400px;
+  input {
+    font-size: 1.1em;
+    outline: none;
+    border: none;
+  }
+}

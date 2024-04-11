@@ -1,9 +1,13 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpParams,
+} from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'environments/environment.development';
 import { jwtDecode } from 'jwt-decode';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -21,13 +25,14 @@ export class AuthService {
     const params = new HttpParams()
       .set('correo', user.email)
       .set('contraseña', user.password);
-    return this.http
-      .get(environment.apiUrl + '/auth/signIn', { params })
-      .pipe(
-        tap((tokens: any) =>
-          this.doLoginUser(user.email, JSON.stringify(tokens)),
-        ),
-      );
+    return this.http.get(environment.apiUrl + '/auth/signIn', { params }).pipe(
+      tap((tokens: any) =>
+        this.doLoginUser(user.email, JSON.stringify(tokens)),
+      ),
+      catchError((error: HttpErrorResponse) => {
+        throw error;
+      }),
+    );
   }
 
   private doLoginUser(email: string, token: any) {
@@ -47,7 +52,7 @@ export class AuthService {
   }
 
   getCurrentAuthUser() {
-    return this.http.get('https://api.escuelajs.co/api/v1/auth/profile');
+    return this.http.get('https://api.escuelajs.co/api/v1/auth/profile').pipe;
   }
 
   isLoggedIn() {

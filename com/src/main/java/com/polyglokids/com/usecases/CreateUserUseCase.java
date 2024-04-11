@@ -48,7 +48,7 @@ public class CreateUserUseCase {
     userModel.setRoles(list);
 
     // Puedes ajustar la lógica para mapear cursos si es necesario
-    userModel.setCursos(userEntity.getUserProps().getCursos());
+    // userModel.setCursos(userEntity.getUserProps().getCursos());
     return userModel;
   }
 }

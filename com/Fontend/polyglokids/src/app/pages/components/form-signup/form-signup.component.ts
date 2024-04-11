@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -9,25 +9,26 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { SignUpService } from 'app/services/sing.service';
+import { SnackBarService } from 'app/services/snackBar.service';
 import { strongPasswordRegx } from 'app/utils/regex/hardPassword';
-import { Router } from 'express';
 
 @Component({
   selector: 'app-form-signup',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterLink],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './form-signup.component.html',
   styleUrl: './form-signup.component.scss',
 })
 export class FormSignupComponent {
   signUpForm: FormGroup;
+  router = inject(Router);
 
   constructor(
     private form: FormBuilder,
     private signUpService: SignUpService,
-    private router: Router,
+    private snackBarService: SnackBarService,
   ) {
     this.signUpForm = this.form.group({
       correo: ['', [Validators.required, Validators.email]],
@@ -99,16 +100,19 @@ export class FormSignupComponent {
   }
 
   enviar() {
-    this.signUpService.signUp(this.signUpForm).subscribe(
-      (response) => {
-        this.router.navigate(['/signup']); // Redirigir al componente de registro
+    this.signUpService.signUp(this.signUpForm).subscribe({
+      next: (data) => {
+        this.snackBarService.DisplayMessange(
+          'El registro se realizo con exito',
+          true,
+        );
+        this.router.navigate(['/login']);
       },
-      (error) => {
+      error: (error) => {
         console.error('Error en la solicitud de registro:', error);
-        this.errorMessage =
+        const errorMessage =
           'Ocurrió un error durante el registro. Por favor, inténtelo de nuevo más tarde.';
-        // Manejar errores (por ejemplo, mostrar un mensaje de error)
       },
-    );
+    });
   }
 }

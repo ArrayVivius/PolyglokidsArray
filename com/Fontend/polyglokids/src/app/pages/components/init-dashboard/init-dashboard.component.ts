@@ -99,6 +99,8 @@ export class InitDashboardComponent {
   }
 
   handleEvents(events: EventApi[]) {
+
+
     this.currentEvents.set(events);
     this.changeDetector.detectChanges(); // workaround for pressionChangedAfterItHasBeenCheckedError
   }

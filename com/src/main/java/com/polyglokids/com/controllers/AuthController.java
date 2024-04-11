@@ -56,15 +56,16 @@ public class AuthController {
       UserModel user = createUserUseCase.save(bod);
       return ResponseEntity.ok(user);
     } catch (Exception e) {
-      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error al tratar de guardar los registros", e);
+      return new ResponseEntity("Error al tratar de guardar los registros", HttpStatus.BAD_REQUEST);
     }
   }
 
   @GetMapping("/signIn")
-  public AuthRes getUser(@RequestParam String correo, @RequestParam String contraseña) {
-    System.out.println("hello");
+  public ResponseEntity<?> getUser(@RequestParam String correo, @RequestParam String contraseña) {
     AuthRes user = signInUseCase.singIn(correo, contraseña);
-    System.out.println("sdasdasd" + user);
-    return user;
+    if (user == null) {
+      return new ResponseEntity("el ususario es invalido", HttpStatus.UNAUTHORIZED);
+    }
+    return ResponseEntity.ok(user);
   }
 }
