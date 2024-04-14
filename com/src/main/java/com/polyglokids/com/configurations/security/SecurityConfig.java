@@ -47,6 +47,7 @@ public class SecurityConfig {
 
   @Bean
   public AuthenticationProvider authenticationProvider() {
+    System.out.println("dasdasdas 111111");
     DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
     daoAuthenticationProvider.setUserDetailsService(findUserByEmailService);
     daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());

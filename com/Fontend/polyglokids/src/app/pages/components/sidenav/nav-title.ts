@@ -1,37 +1,17 @@
 export const navbarTitle = [
   {
-    routeLink: 'dashboard',
+    routeLink: '/dashboard',
     icon: 'fal fa-home',
     label: 'Dashboard',
   },
   {
-    routeLink: 'products',
+    routeLink: 'course',
     icon: 'fal fa-box-open',
-    label: 'Products',
+    label: 'Curso',
   },
   {
-    routeLink: 'statistics',
-    icon: 'fal fa-chart-bar',
-    label: 'Statistics',
-  },
-  {
-    routeLink: 'coupens',
-    icon: 'fal fa-tags',
-    label: 'Coupens',
-  },
-  {
-    routeLink: 'pages',
-    icon: 'fal fa-file',
-    label: 'Pages',
-  },
-  {
-    routeLink: 'media',
-    icon: 'fal fa-camera',
-    label: 'Media',
-  },
-  {
-    routeLink: 'settings',
-    icon: 'fal fa-cog',
-    label: 'Settings',
+    routeLink: '/login',
+    icon: 'fal fa-sign-out',
+    label: 'logout',
   },
 ];

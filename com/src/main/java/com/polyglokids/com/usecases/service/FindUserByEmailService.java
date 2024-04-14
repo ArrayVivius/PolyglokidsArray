@@ -22,12 +22,10 @@ public class FindUserByEmailService implements UserDetailsService {
 
   @Transactional
   public UserModel loadUserByUsername(String username) throws UsernameNotFoundException {
-    UserModel user = (UserModel) userDao.findByCorreo(username)
+    UserModel user = userDao.findByCorreo(username)
         .orElseThrow(
             () -> new UsernameNotFoundException("Usuario no encontrado con el correo electrónico: " + username));
-
     user.getRoles().size();
-    System.out.println(user);
     return user;
   }
 }

@@ -4,19 +4,19 @@ export const toCardTopData = [
   {
     h3: 'Curso en proceso',
     icon: 'fa fa-rocket fa-3x',
-    value: '4',
+    value: '0',
   },
 
   {
     h3: 'Curso en proceso',
     icon: 'fa fa-rocket fa-3x',
-    value: '4',
+    value: '0',
   },
 
   {
     h3: 'Curso en proceso',
     icon: 'fa fa-rocket fa-3x',
-    value: '4',
+    value: '0',
   },
 ];
 

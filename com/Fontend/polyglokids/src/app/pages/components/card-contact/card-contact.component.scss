@@ -1,18 +1,13 @@
 @import "../../../../variable";
 
 .card {
-  float: left;
-  margin: 3rem;
-}
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .card-one {
   position: relative;
-  width: 300px;
+  width: 70%;
+
   background: #fff;
   box-shadow: 0 10px 7px -5px rgba(#000, 0.4);
 

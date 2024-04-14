@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
 import { FormSignupComponent } from './pages/components/form-signup/form-signup.component';
 import { SearchBarComponent } from 'pages/components/search-bar/search-bar.component';
 import { InfoCourseComponent } from './pages/info-course/info-course.component';
+import { ProfesorComponent } from './pages/profesor/profesor.component';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ import { InfoCourseComponent } from './pages/info-course/info-course.component';
     FormSignupComponent,
     SearchBarComponent,
     InfoCourseComponent,
+    ProfesorComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

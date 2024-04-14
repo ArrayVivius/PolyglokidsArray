@@ -8,6 +8,7 @@ import { InitDashboardComponent } from './pages/components/init-dashboard/init-d
 import { LoginSectionComponent } from './pages/components/login-section/login-section.component';
 import { FormSignupComponent } from './pages/components/form-signup/form-signup.component';
 import { InfoCourseComponent } from './pages/info-course/info-course.component';
+import { ProfesorComponent } from './pages/profesor/profesor.component';
 
 export const routes: Routes = [
   {
@@ -29,6 +30,11 @@ export const routes: Routes = [
       {
         path: 'course/:id',
         component: InfoCourseComponent,
+        canActivate: [authGuard],
+      },
+      {
+        path: 'profesor',
+        component: ProfesorComponent,
         canActivate: [authGuard],
       },
     ],

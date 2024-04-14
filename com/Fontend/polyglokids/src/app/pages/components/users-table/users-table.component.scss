@@ -1,0 +1,27 @@
+.alumnons-container {
+  display: flex;
+
+  .table-container {
+    width: 700px;
+    background-color: yellow;
+    padding: 3px;
+  }
+}
+
+.contact-user-icon {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.contact-options-icon {
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    width: 30px;
+  }
+}
+
+.table-Options-title {
+  padding-left: 3rem;
+}

@@ -32,15 +32,12 @@ public class SignInUseCase {
       AuthRes res = new AuthRes();
       authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
       UserDetails user = findUserByEmailService.loadUserByUsername(email);
-      System.out.println("USER IS" + user);
       var jwt = jwUtils.generateToken(user);
       var refreshToken = jwUtils.generateRefreshToken(new HashMap<>(), user);
-      System.out.println("JWT" + jwt);
       res.setToken(jwt);
       res.setRefreshToken(refreshToken);
       return res;
     } catch (Exception e) {
-      System.out.println("e " + e);
       return null;
     }
 

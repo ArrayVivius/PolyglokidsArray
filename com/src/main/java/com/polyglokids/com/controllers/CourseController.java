@@ -1,6 +1,7 @@
 package com.polyglokids.com.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,8 +35,6 @@ public class CourseController {
 
   private final DTOValidationService dtoValidationService;
 
-  // private final GetCourseUserCase getCourseUserCase;
-
   @Autowired
   public CourseController(CreateCouserUseCase createCouserUseCase, DTOValidationService dtoValidationService,
       GetCourseUseCase getCourseUseCase) {
@@ -64,7 +63,7 @@ public class CourseController {
   @GetMapping("/{id}")
   public ResponseEntity findCourseWithLessons(@PathVariable String id) {
     try {
-      List<Object[]> course = getCourseUseCase.GetCourseByIdWithAllLesson(id);
+      Optional<CourseModel> course = getCourseUseCase.GetCourseByIdWithAllLesson(id);
       return ResponseEntity.ok(course);
     } catch (Exception e) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error al tratar de Obtener el registro", e);

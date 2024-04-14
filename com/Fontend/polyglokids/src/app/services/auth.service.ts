@@ -48,7 +48,6 @@ export class AuthService {
   logout() {
     localStorage.removeItem(this.JWT_TOKEN);
     this.isAuthenticatedSubject.next(false);
-    this.router.navigate(['/login']);
   }
 
   getCurrentAuthUser() {

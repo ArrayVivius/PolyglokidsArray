@@ -36,7 +36,6 @@ public class CourseEntity {
         .descripcion(createProps.getDescripcion())
         .profesor(createProps.getProfesor())
         .idioma(createProps.getIdioma())
-        .alumnos(createProps.getAlumnos())
         .numero_de_clase(createProps.getNumeroDeClase())
         .build();
 

@@ -25,110 +25,34 @@
   </div>
   <div class="course-details">
     <mat-tab-group animationDuration="0ms" class="tabs">
-      <mat-tab label="alumnons">
-        <div class="alumnons-container">
-          <app-card-contact></app-card-contact>
-          <div class="table-container">
-            <table
-              mat-table
-              [dataSource]="dataSource"
-              class="mat-elevation-z8 demo-table"
-            >
-              <!-- Position Column -->
-              <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef>No.</th>
-                <td mat-cell *matCellDef="let element">
-                  <img
-                    src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                    alt=""
-                    class="contact-user-icon"
-                  />
-                </td>
-              </ng-container>
-
-              <!-- Name Column -->
-              <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef>Nombre</th>
-                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-              </ng-container>
-
-              <!-- Weight Column -->
-              <ng-container matColumnDef="weight">
-                <th mat-header-cell *matHeaderCellDef>Correo</th>
-                <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
-              </ng-container>
-
-              <!-- Symbol Column -->
-              <ng-container matColumnDef="symbol" style="padding-left: 1em">
-                <th
-                  mat-header-cell
-                  *matHeaderCellDef
-                  class="table-Options-title"
-                >
-                  Opciones
-                </th>
-                <td mat-cell *matCellDef="let element">
-                  <div class="contact-options-icon">
-                    <div>
-                      <img
-                        src="../../../../assets/images/envelope-solid.svg"
-                        alt=""
-                      />
-                    </div>
-
-                    <div>
-                      <img
-                        src="../../../../assets/images/plus-solid.svg "
-                        alt="add-user-icon"
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="../../../../assets/images/ellipsis-v-solid.svg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </td>
-              </ng-container>
-
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-            </table>
-          </div>
-        </div>
-      </mat-tab>
       <mat-tab label="Detalles">
-        <div class="detail-container">
-          <ul class="ul-details">
-            <h3>Detalles</h3>
-            <li
-              *ngFor="let detail of courseDetails"
-              class="info-meet-calendary"
-            >
-              <i class="{{ detail.icon }}"></i>
-              <p>{{ detail.title }}:</p>
-              <p>{{ detail.value }}</p>
-            </li>
-          </ul>
-          <div class="detail-left">
-            <h3>descripcios</h3>
+        <!-- details component -->
+        <app-description-course></app-description-course>
+      </mat-tab>
 
-            <p class="course-header__mid-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea
-              atque quidem! Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Sequi perferendis molestiae non nemo doloribus. Doloremque,
-              nihil! At ea atque quidem! Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Sequi perferendis molestiae non nemo doloribus.
-              Doloremque, nihil! At ea atque quidem! Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Sequi perferendis molestiae non nemo
-              doloribus. Doloremque, nihil! At ea atque quidem!
-            </p>
+      <mat-tab label="alumnons">
+        <!-- alumns component -->
+        <div class="alumnos-container">
+          <div class="alumnos-container-left">
+            <app-card-contact></app-card-contact>
+            <div class="select-card-option">
+              <div class="select-card-option__button button-contact-left">
+                estudiante
+              </div>
+              <div class="select-card-option__button button-contact-right">
+                profesor
+              </div>
+            </div>
           </div>
+          <app-users-table></app-users-table>
         </div>
       </mat-tab>
-      <mat-tab label="lista de temas"> Content 3 </mat-tab>
+      <!-- details component -->
+      <mat-tab label="clases"> <app-clases></app-clases> </mat-tab>
+      <mat-tab label="evaluaciones">
+        <app-evaluciones-studiantes></app-evaluciones-studiantes>
+      </mat-tab>
+      <!-- details component -->
     </mat-tab-group>
   </div>
 </div>

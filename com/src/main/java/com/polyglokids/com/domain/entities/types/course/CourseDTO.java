@@ -26,8 +26,10 @@ public class CourseDTO {
   private String idioma;
 
   private Set<String> alumnos; // Cambiado a Set<String> en lugar de List<String>
+  //
 
   @NotNull(message = "Es necesario agregar un número de clase")
   @Positive(message = "El número de clase no puede estar en blanco")
   private Integer numeroDeClase;
+
 }

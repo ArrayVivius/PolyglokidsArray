@@ -1,0 +1,63 @@
+<div class="alumnons-container">
+  <div class="table-container">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8 demo-table"
+    >
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">
+          <img
+            src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+            alt=""
+            class="contact-user-icon"
+          />
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef>Correo</th>
+        <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol" style="padding-left: 1em">
+        <th mat-header-cell *matHeaderCellDef class="table-Options-title">
+          Opciones
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div class="contact-options-icon">
+            <div>
+              <img src="../../../../assets/images/envelope-solid.svg" alt="" />
+            </div>
+
+            <div>
+              <img
+                src="../../../../assets/images/plus-solid.svg "
+                alt="add-user-icon"
+              />
+            </div>
+            <div>
+              <img
+                src="../../../../assets/images/ellipsis-v-solid.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

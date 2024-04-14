@@ -1,12 +1,14 @@
 package com.polyglokids.com.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.polyglokids.com.domain.entities.UserEntity;
@@ -38,6 +40,11 @@ public class UserController {
     UserModel user = createUserUseCase.save(bod);
     return user;
   }
+
+  // @GetMapping("user")
+  // public ResponseEntity findUser(@RequestParam String id){
+  //
+  // }
 
   // @GetMapping("user")
   // public UserDetails getUser(@PathVariable String correo) {

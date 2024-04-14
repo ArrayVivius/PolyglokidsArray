@@ -51,8 +51,10 @@ public class AuthController {
     if (validationResponse != null) {
       return validationResponse;
     }
+    System.out.println("dasdasdasd");
 
     try {
+
       UserModel user = createUserUseCase.save(bod);
       return ResponseEntity.ok(user);
     } catch (Exception e) {

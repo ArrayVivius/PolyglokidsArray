@@ -9,7 +9,6 @@ import com.polyglokids.com.persistence.models.course.CourseDao;
 import com.polyglokids.com.persistence.models.course.CourseModel;
 import com.polyglokids.com.persistence.models.lesson.LessonDao;
 import com.polyglokids.com.persistence.models.lesson.LessonModel;
-import com.polyglokids.com.usecases.service.FindCourseByIdService;
 
 @Service
 public class CreateLessonUseCase {
@@ -18,20 +17,22 @@ public class CreateLessonUseCase {
   private LessonDao lessonDao;
 
   @Autowired
-  private FindCourseByIdService findCourseByIdService;
+  private CourseDao courseDao;
 
   public LessonModel save(LessonDTO prop) throws Exception {
-    CourseModel courseModel = findCourseByIdService.loadCourseById(prop.getCurso());
+    CourseModel courseModel = courseDao.findById(prop.getCurso())
+        .orElseThrow(() -> new RuntimeException("No se encontró ningún curso con el ID proporcionado"));
     if (courseModel == null) {
       throw new Exception("no existe el curso");
     }
     LessonEntity lessonEntity = LessonEntity.create(prop);
 
-    LessonModel lessonModel = lessonDao.save(convertEntityToModel(lessonEntity, prop.getCurso()));
+    LessonModel lessonModel = lessonDao.save(convertEntityToModel(lessonEntity,
+        courseModel));
     return lessonModel;
   }
 
-  private LessonModel convertEntityToModel(LessonEntity lessonEntity, String course) {
+  private LessonModel convertEntityToModel(LessonEntity lessonEntity, CourseModel course) {
 
     LessonModel lessonModel = new LessonModel();
     lessonModel.setId(lessonEntity.getId());

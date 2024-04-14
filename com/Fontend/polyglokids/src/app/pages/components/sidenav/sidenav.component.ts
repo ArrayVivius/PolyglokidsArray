@@ -11,10 +11,12 @@ import {
   EventEmitter,
   OnInit,
   HostListener,
+  Inject,
 } from '@angular/core';
 import { navbarTitle } from './nav-title';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AuthService } from 'app/services/auth.service';
 
 export interface SideNavToggle {
   screenWidth: number;
@@ -57,6 +59,8 @@ export class SidenavComponent implements OnInit {
   screenWidth = 0;
   navTitle = navbarTitle;
 
+  constructor(private authService: AuthService) {}
+
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.screenWidth = window.innerWidth;
@@ -87,5 +91,8 @@ export class SidenavComponent implements OnInit {
       collapsed: this.collapsed,
       screenWidth: this.screenWidth,
     });
+  }
+  logout(): void {
+    this.authService.logout();
   }
 }

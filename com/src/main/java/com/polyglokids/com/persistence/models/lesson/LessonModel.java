@@ -2,16 +2,19 @@ package com.polyglokids.com.persistence.models.lesson;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.polyglokids.com.persistence.models.course.CourseModel;
+import com.polyglokids.com.persistence.models.homework.HomeWorkModel;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -51,6 +54,12 @@ public class LessonModel {
   @Column(name = "link_de_clase")
   private String link;
 
-  @Column(name = "curso_id")
-  private String curso;
+  @JsonBackReference
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "curso_id")
+  private CourseModel curso;
+
+  @JsonManagedReference
+  @OneToOne(cascade = CascadeType.ALL, mappedBy = "leccion")
+  private HomeWorkModel tarea;
 }

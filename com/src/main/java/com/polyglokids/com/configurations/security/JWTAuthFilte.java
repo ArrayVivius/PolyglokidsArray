@@ -24,6 +24,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.transaction.Transactional;
 
 /**
  * JWTAuthFilte
@@ -49,17 +50,22 @@ public class JWTAuthFilte extends OncePerRequestFilter {
     }
     jwtToken = authHeader.substring(7);
     userEmail = jwtUtils.extractUsername(jwtToken);
+
+    System.out.println("2222223");
     if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
       UserModel userDetails = findUserByEmailService.loadUserByUsername(userEmail);
 
       if (jwtUtils.isTokenValid(jwtToken, userDetails)) {
+        System.out.println("2222222");
 
         Set<ERoleType> rolesFromUser = userDetails.getRoles();
+
         List<GrantedAuthority> authorities = rolesFromUser.stream()
             .map(role -> new SimpleGrantedAuthority(role.toString()))
             .collect(Collectors.toList());
 
         System.out.println("authorities " + authorities);
+        System.out.println("2222222");
 
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
             userDetails, null, authorities);

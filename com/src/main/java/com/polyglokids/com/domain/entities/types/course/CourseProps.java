@@ -14,6 +14,5 @@ public class CourseProps {
   String descripcion;
   String profesor;
   String idioma;
-  Set<String> alumnos;
   Integer numero_de_clase;
 }

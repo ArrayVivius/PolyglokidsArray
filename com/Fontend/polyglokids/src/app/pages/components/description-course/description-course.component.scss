@@ -1,0 +1,19 @@
+.detail-container {
+  display: flex;
+  border: 1px solid;
+  h3 {
+    font-size: 2em;
+  }
+}
+.detail-left {
+  width: 60%;
+}
+
+.ul-details {
+  width: 50%;
+  gap: 10px;
+  li {
+    display: flex;
+    flex-direction: row;
+  }
+}

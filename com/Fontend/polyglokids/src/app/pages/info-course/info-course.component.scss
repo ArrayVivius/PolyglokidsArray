@@ -64,68 +64,46 @@
 }
 
 .course-details {
-  margin: 0 auto;
-  display: flex;
-  margin-top: 2.5rem;
-  width: 80%;
-  height: 600px;
-
-  .tabs {
-    width: 100%;
-  }
-  .ul-details {
-    width: 50%;
-    gap: 10px;
-    li {
-      display: flex;
-      flex-direction: row;
-    }
-  }
-}
-o .detail-container {
-  display: flex;
-  border: 1px solid;
-  h3 {
-    font-size: 2em;
-  }
-}
-.detail-left {
-  width: 60%;
-}
-
-.contact-user-icon {
-  width: 60px;
-  height: auto;
-  border-radius: 50%;
-}
-
-.contact-options-icon {
-  display: flex;
-  justify-content: space-evenly;
-  img {
-    width: 30px;
-  }
-}
-
-.table-container {
   width: 70%;
-  background-color: yellow;
-  padding: 3px;
-}
-.table-Options-title {
-  padding-left: 3rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  border: 1px solid;
 }
 
-.teacher-card {
-  width: 50%;
-  background-color: blue;
+.select-card-option__button {
+  padding: 1em;
+  font-size: 1.2em;
+  width: 200px;
 }
 
-.container_alumnos {
+.select-card-option {
   display: flex;
+  justify-content: center;
+
+  .button-contact-left {
+    background: green;
+  }
+
+  .button-contact-right {
+    background-color: red;
+  }
 }
 
-.alumnons-container {
+.app-users-table {
+  width: 300px;
+}
+
+.alumnos-container {
   display: flex;
-  width: 100%;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.alumnos-container-left {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  height: 30rem;
+  justify-content: center;
+  border-radius: 40px;
 }

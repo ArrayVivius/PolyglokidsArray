@@ -1,5 +1,4 @@
-
-package com.polyglokids.com.usecases;;
+package com.polyglokids.com.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,8 +33,10 @@ public class LessonController {
   }
 
   @PostMapping("/createLesson")
-  public ResponseEntity<?> createLesson(@Valid @RequestBody LessonDTO bod, BindingResult bindingResult) {
-    ResponseEntity<?> validationResponse = dtoValidationService.validateDTO(bod, bindingResult);
+  public ResponseEntity<?> createLesson(@Valid @RequestBody LessonDTO bod,
+      BindingResult bindingResult) {
+    ResponseEntity<?> validationResponse = dtoValidationService.validateDTO(bod,
+        bindingResult);
     if (validationResponse != null) {
       return validationResponse;
     }

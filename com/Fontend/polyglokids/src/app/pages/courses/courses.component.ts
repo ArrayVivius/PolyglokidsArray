@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SearchBarComponent } from 'pages/components/search-bar/search-bar.component';
 import { CommonModule } from '@angular/common';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { RouterLink } from '@angular/router';
 
 interface SelectOptions {
   value: string;
@@ -22,6 +23,7 @@ interface SelectOptions {
     MatSelectModule,
     SearchBarComponent,
     MatPaginatorModule,
+    RouterLink,
   ],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss',
