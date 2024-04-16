@@ -32,4 +32,8 @@ public class CourseDTO {
   @Positive(message = "El número de clase no puede estar en blanco")
   private Integer numeroDeClase;
 
+  @NotNull(message = "Es necesario agregar estado de curso ")
+  @NotBlank(message = "el estado de curso no puede estar en blanco")
+  private String estadoDeCurso;
+
 }

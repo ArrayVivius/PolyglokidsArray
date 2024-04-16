@@ -3,9 +3,11 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
+import { User, UserStore } from 'app/store/user.store';
 
 @Component({
   selector: 'app-login-section',
+  providers: [UserStore],
   standalone: true,
   imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './login-section.component.html',
@@ -17,6 +19,7 @@ export class LoginSectionComponent {
   authService = inject(AuthService);
   router = inject(Router);
   errorMessage: string = '';
+  userStore = inject(UserStore);
 
   login(event: Event) {
     event.preventDefault();
@@ -27,9 +30,10 @@ export class LoginSectionComponent {
         password: this.password,
       })
       .subscribe({
-        next: () => {
-          alert('Login success!');
+        next: (user: User) => {
+          this.userStore.addUser(user);
           this.router.navigate(['/dashboard']);
+          // this.userStore.addUser()
         },
         error: (err) => {
           this.errorMessage =

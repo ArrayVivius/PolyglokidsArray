@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
 import { INITIAL_EVENTS, createEventId, toCardTopData } from './init-data';
 import { CommonModule } from '@angular/common';
 import { FullCalendarModule } from '@fullcalendar/angular';
@@ -14,6 +14,7 @@ import {
 } from '@fullcalendar/core';
 import { InfoCardComponent } from '../info-card/info-card.component';
 import { ContactListCardComponent } from '../contact-list-card/contact-list-card.component';
+import { UserCourseByStatusServices } from 'app/services/get-course-by-state.service';
 
 @Component({
   selector: 'app-init-dashboard',
@@ -29,6 +30,8 @@ import { ContactListCardComponent } from '../contact-list-card/contact-list-card
 })
 export class InitDashboardComponent {
   cardTopData;
+
+  public curseProgres = inject(UserCourseByStatusServices);
 
   calendarVisible = signal(true);
   calendarOptions = signal<CalendarOptions>({
@@ -87,7 +90,6 @@ export class InitDashboardComponent {
       });
     }
   }
-
   handleEventClick(clickInfo: EventClickArg) {
     if (
       confirm(
@@ -99,8 +101,7 @@ export class InitDashboardComponent {
   }
 
   handleEvents(events: EventApi[]) {
-
-
+    console.log(this.curseProgres.courses()[0]);
     this.currentEvents.set(events);
     this.changeDetector.detectChanges(); // workaround for pressionChangedAfterItHasBeenCheckedError
   }

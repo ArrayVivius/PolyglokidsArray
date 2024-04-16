@@ -37,6 +37,7 @@ public class CourseEntity {
         .profesor(createProps.getProfesor())
         .idioma(createProps.getIdioma())
         .numero_de_clase(createProps.getNumeroDeClase())
+        .estado_de_curso(createProps.getEstadoDeCurso())
         .build();
 
     UUID uuid = UUID.randomUUID();

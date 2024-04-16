@@ -2,6 +2,7 @@ package com.polyglokids.com.persistence.models.course;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.polyglokids.com.persistence.models.lesson.LessonModel;
 import com.polyglokids.com.persistence.models.user.UserModel;
@@ -52,9 +53,8 @@ public class CourseModel {
   @Column(name = "numero_de_clase")
   private Integer numero_de_clase;
 
-  @ManyToMany(mappedBy = "courses")
-  private List<UserModel> alumnos;
-
+  @Column(name = "estado_de_curso")
+  private String estado_de_curso;
   @JsonManagedReference
   @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<LessonModel> lecciones;

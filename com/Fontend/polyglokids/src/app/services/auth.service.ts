@@ -5,9 +5,10 @@ import {
 } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserStore } from 'app/store/user.store';
 import { environment } from 'environments/environment.development';
 import { jwtDecode } from 'jwt-decode';
-import { BehaviorSubject, Observable, catchError, tap } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,7 @@ export class AuthService {
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   private router = inject(Router);
   private http = inject(HttpClient);
+  private userStore = inject(UserStore);
 
   constructor() {}
 
@@ -26,9 +28,19 @@ export class AuthService {
       .set('correo', user.email)
       .set('contraseña', user.password);
     return this.http.get(environment.apiUrl + '/auth/signIn', { params }).pipe(
-      tap((tokens: any) =>
-        this.doLoginUser(user.email, JSON.stringify(tokens)),
-      ),
+      map((response: any) => {
+        return {
+          id: response.user.id,
+          correo: response.user.correo,
+          nombre: response.user.nombre,
+          apellido: response.user.apellido,
+          roles: response.user.roles,
+          token: response.token, // Add this line
+        };
+      }),
+      tap((user: any) => {
+        this.doLoginUser(user.correo, JSON.stringify(user.token)); // Change this line
+      }),
       catchError((error: HttpErrorResponse) => {
         throw error;
       }),

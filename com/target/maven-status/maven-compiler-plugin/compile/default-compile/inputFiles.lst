@@ -15,6 +15,7 @@
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/domain/entities/LessonEntity.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/domain/entities/types/homework/HomeWorkProps.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/persistence/models/homework/HomeWorkModel.java
+/home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/usecases/GetUserCourseByStatusUseCase.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/persistence/models/lesson/LessonModel.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/persistence/models/user/CursosAlumnosMappingDao.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/usecases/GetCouseByLessonUseCase.java
@@ -25,6 +26,7 @@
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/persistence/models/course/CourseWithLessonsDao.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/PolyglokidsApplication.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/controllers/HomeworkController.java
+/home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/usecases/GetUserWithCourse.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/usecases/AddStudentToCurse.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/persistence/models/lesson/LessonDao.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/persistence/models/course/CourseModel.java
@@ -55,4 +57,5 @@
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/usecases/service/FindUserByEmailService.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/DTOs/course/CourseWithLessonRes.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/configurations/handlerErrors/ValidationHandlerRequestDTO.java
+/home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/usecases/GetUserCouesesUseCase.java
 /home/vandel/Documentos/polyglokids/com/src/main/java/com/polyglokids/com/domain/entities/types/homework/HomeWorkDTO.java

@@ -66,6 +66,7 @@ public class CreateCouserUseCase {
     courseModel.setProfesor(courseEntity.getCourseProps().getProfesor());
     courseModel.setIdioma(courseEntity.getCourseProps().getIdioma());
     courseModel.setNumero_de_clase(courseEntity.getCourseProps().getNumero_de_clase());
+    courseModel.setEstado_de_curso(courseEntity.getCourseProps().getEstado_de_curso()); // Corregido aquí
     return courseModel;
   }
 

@@ -148,13 +148,7 @@ nav {
 /* Init Section */
 .section-init {
   width: 100%;
-  background: linear-gradient(
-    -10deg,
-    var(--white-color) 0%,
-    var(--white-color) 40%,
-    var(--menu-bg) 10%,
-    var(--menu-bg) 100%
-  );
+  background-color: rgb(147, 191, 207);
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -220,12 +214,15 @@ nav {
 
 .landing-init-img {
   border-radius: 50%;
-  width: 25em;
-  height: 25em;
+  width: 35em;
+  height: 35em;
+  margin-top: 40rem;
   background-color: var(--white-color);
-  margin: 10% 0 0 0;
-  background-image: url(../../../assets/images/pilygglokids.jpeg);
-  background-size: cover;
+  margin: 4% 0 0 0;
+  background-image: url(../../../assets/images/poli-logo.jpeg);
+  background-repeat: no-repeat;
+  border-color: blue;
+  border: solid 1px;
 }
 
 /* Section 2 */
@@ -257,6 +254,7 @@ nav {
 .section-2__info h2 {
   width: 70%;
   padding-bottom: 40px;
+  line-height: normal;
 }
 
 /* Section 3 */

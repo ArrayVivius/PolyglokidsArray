@@ -14,7 +14,11 @@ import com.polyglokids.com.persistence.models.user.UserDao;
 import com.polyglokids.com.persistence.models.user.UserModel;
 import com.polyglokids.com.usecases.types.ICreateUser;
 
+import jakarta.transaction.Transactional;
+
 @Service
+
+@Transactional
 public class CreateUserUseCase {
 
   @Autowired

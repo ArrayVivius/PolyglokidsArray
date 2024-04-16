@@ -12,4 +12,6 @@ public interface CursosAlumnosMappingDao extends JpaRepository<CursosAlumnosMapp
   // Otros métodos aquí...
   @Query("SELECT m.user FROM CursosAlumnosMappingModel m WHERE m.curso.id = :cursoId")
   List<UserModel> findUsersByCursoId(@Param("cursoId") String cursoId);
+
+  List<CursosAlumnosMappingModel> findByUserId(String userId);
 }

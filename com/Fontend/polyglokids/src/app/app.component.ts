@@ -12,6 +12,7 @@ import { FormSignupComponent } from './pages/components/form-signup/form-signup.
 import { SearchBarComponent } from 'pages/components/search-bar/search-bar.component';
 import { InfoCourseComponent } from './pages/info-course/info-course.component';
 import { ProfesorComponent } from './pages/profesor/profesor.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @Component({
   selector: 'app-root',

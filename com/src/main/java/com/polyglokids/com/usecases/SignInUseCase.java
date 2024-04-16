@@ -34,6 +34,7 @@ public class SignInUseCase {
       UserDetails user = findUserByEmailService.loadUserByUsername(email);
       var jwt = jwUtils.generateToken(user);
       var refreshToken = jwUtils.generateRefreshToken(new HashMap<>(), user);
+      res.setUser(user);
       res.setToken(jwt);
       res.setRefreshToken(refreshToken);
       return res;

@@ -15,4 +15,5 @@ public class CourseProps {
   String profesor;
   String idioma;
   Integer numero_de_clase;
+  String estado_de_curso;
 }

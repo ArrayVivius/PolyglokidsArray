@@ -4,6 +4,7 @@ com/polyglokids/com/usecases/SeyHello.class
 com/polyglokids/com/domain/entities/HomeWorkEntity.class
 com/polyglokids/com/controllers/AuthController.class
 com/polyglokids/com/persistence/models/lesson/LessonDao.class
+com/polyglokids/com/usecases/GetUserCouesesUseCase.class
 com/polyglokids/com/usecases/CreateHomeworkUseCase.class
 com/polyglokids/com/domain/entities/CourseEntity.class
 com/polyglokids/com/DTOs/auth/AuthRes.class
@@ -29,6 +30,7 @@ com/polyglokids/com/usecases/service/FindCourseByIdService.class
 com/polyglokids/com/configurations/handlerErrors/DTOValidationService.class
 com/polyglokids/com/usecases/GetCourseUseCase.class
 com/polyglokids/com/controllers/LessonController.class
+com/polyglokids/com/usecases/GetUserCourseByStatusUseCase.class
 com/polyglokids/com/persistence/models/UserCourse/UserCourseModel.class
 com/polyglokids/com/persistence/models/lesson/LessonModel.class
 com/polyglokids/com/domain/entities/types/lesson/LessonProps$LessonPropsBuilder.class

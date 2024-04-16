@@ -59,10 +59,6 @@ public class UserModel implements UserDetails {
   @Column(name = "fecha_de_creacion")
   LocalDate fecha_de_creacion;
 
-  @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-  @JoinTable(name = "COURSE_ALUMNO_MAPPING", joinColumns = @JoinColumn(name = "alumno_id", referencedColumnName = "id_user"), inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "curso_id"))
-  private List<CourseModel> courses;
-
   @ElementCollection(targetClass = ERoleType.class)
   @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "id_user"))
   @Column(name = "role", nullable = false)
